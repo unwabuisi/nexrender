@@ -1,5 +1,5 @@
 const { send, json } = require('micro');
-const { create } = require('@nexrender/types/worker');
+const { create } = require('../helpers/worker');
 const { insert } = require('../helpers/workerDatabase');
 
 module.exports = async (req, res) => {
