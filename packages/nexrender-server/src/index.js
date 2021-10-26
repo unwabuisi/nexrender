@@ -19,6 +19,9 @@ const subhandler = router(
     ns(get('/jobs/:uid',        require('./routes/jobs-fetch'))),
     ns(put('/jobs/:uid',        require('./routes/jobs-update'))),
     ns(del('/jobs/:uid',        require('./routes/jobs-remove'))),
+    ns(post('/workers/:pid',    require('./routes/workers-create'))),
+    ns(del('/workers/:pid',     require('./routes/workers-remove'))),
+    ns(get('/workers',          require('./routes/workers-fetch')))
 )
 
 const handler = secret => {
