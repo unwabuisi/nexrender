@@ -15,7 +15,9 @@ let data = (fs.existsSync(database) && fs.readFileSync(database, 'utf8'))
     : [];
 
 if (!process.env.NEXRENDER_DATABASE && !fs.existsSync(defaultPath)) {
-    fs.mkdirSync(defaultPath);
+    fs.mkdirSync(defaultPath, {recursive: true}, err => {
+        console.error(err)
+    });
 }
 
 /* internal methods */
